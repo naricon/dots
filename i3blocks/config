@@ -1,0 +1,11 @@
+[temp]
+separator=false
+command=sensors | awk '/^edge/ {print $2}'
+interval=15
+color=#ff0000
+
+[time]
+separator=false
+command=date '+%d %b (%a) %I:%M %p'
+interval=60
+color=#03fc0b
