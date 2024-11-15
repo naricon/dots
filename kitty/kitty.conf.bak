@@ -2649,6 +2649,6 @@ allow_bold text
 # END_KITTY_FONTS
 
 # BEGIN_KITTY_THEME
-# Twilight
+# Vibrant Ink
 include current-theme.conf
 # END_KITTY_THEME
