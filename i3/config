@@ -64,9 +64,13 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -fn 'FiraCodeNerdFont-10'"
 
-#bindsym $mod+d exec --no-startup-id dmenu_run
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $dbg i3wm.color0 #f0f0f0
+set_from_resource $p i3wm.color1 #f0f0f0
+
+bindsym $mod+d exec dmenu_run -nb "$dbg" -nf "$fg" -sb "$p" -sf "$fg" -fn FiraCodeNerdFont-10
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -232,12 +236,13 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-#client.background       $bg
+client.background       $bg
 
 gaps inner 9
 gaps outer 3
 
 default_border pixel 3
+exec wal -R
 exec_always --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
