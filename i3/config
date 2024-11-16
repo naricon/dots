@@ -64,7 +64,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -nf '#DE96FF' -nb '#000000' -sb '#481860' -sf '#DE96FF' -fn 'FiraCodeNerdFont-10'"
+bindsym $mod+d exec "dmenu_run -fn 'FiraCodeNerdFont-10'"
 
 #bindsym $mod+d exec --no-startup-id dmenu_run
 
@@ -108,7 +108,7 @@ bindsym $mod+z split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
+bindsym $mod+u layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+y layout toggle split
 
@@ -164,7 +164,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r restart
+bindsym $mod+q restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -197,42 +197,47 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-	position top
-
-	    colors {
-		
-		background #000000
-    		statusline #FFFFFF
-    		separator  #666666
-
-    		focused_workspace  #481860 #300030 #DE96FF
-    		active_workspace   #481860 #300030 #DE96FF
-    		inactive_workspace #481860 #220022 #845997
-    		urgent_workspace   #2D0F3B #900000 #FFFFFF
-    		binding_mode       #2F343A #900000 #FFFFFF
-		
-		}
-
-}
+#bar {
+#        status_command i3blocks
+#	position top
+#
+#	    colors {
+#		
+#		background #000000
+#    		statusline #FFFFFF
+#    		separator  #666666
+#
+#    		focused_workspace  #481860 #300030 #DE96FF
+#    		active_workspace   #481860 #300030 #DE96FF
+#    		inactive_workspace #481860 #220022 #845997
+#    		urgent_workspace   #2D0F3B #900000 #FFFFFF
+#    		binding_mode       #2F343A #900000 #FFFFFF
+#		
+#		}
+#
+#}
+#polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #class                 border  bground text    indicator child_border
-client.focused          #481860 #300030 #DE96FF #300030   #481860
-client.focused_inactive #2D0F3B #220022 #DE96FF #1F001F   #341146
-client.unfocused        #2D0F3B #180018 #845997 #180018   #2A0E39
-client.urgent           #C241FF #FF00FF #000000 #FF00FF   #BC3FFF
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+#client.focused          #481860 #300030 #DE96FF #300030   #481860
+#client.focused_inactive #2D0F3B #220022 #DE96FF #1F001F   #341146
+#client.unfocused        #2D0F3B #180018 #845997 #180018   #2A0E39
+#client.urgent           #C241FF #FF00FF #000000 #FF00FF   #BC3FFF
+#client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-#client.focused          $bg     $bg     $fg  $bg       $bg
-#client.focused_inactive $bg     $bg     $fg  $bg       $bg
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
-#client.urgent           $bg     $bg     $fg  $bg       $bg
-#client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 #client.background       $bg
 
-new_window pixel 3
+gaps inner 9
+gaps outer 3
+
+default_border pixel 3
 exec_always --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --restore
@@ -240,4 +245,3 @@ exec xinput --set-prop 9 "libinput Accel Speed" -1
 bindsym $mod+c exec xrandr --output HDMI-A-0 --mode 1920x1080
 bindsym $mod+Shift+s exec scrot -s -e 'mv $f ~/Pictures/screen'
 bindsym $mod+s exec scrot -e 'mv $f ~/Pictures/screen'
-#bindsym $mod+e exec yazi
