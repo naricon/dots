@@ -1,6 +1,6 @@
 # Programs
 - `i3`
-- `python-pywal`
+- `python-pywal16`
 - `kitty`
 - `yazi`
 - `dmenu`
