@@ -1,0 +1,34 @@
+#Volume
+XF86AudioRaiseVolume
+	volume volume_up
+
+XF86AudioLowerVolume
+	volume volume_down
+
+XF86AudioMute
+	volume volume_mute
+
+#Media
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPlay
+	playerctl -p kew play-pause
+
+super + m
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+#Misc
+super + s
+	scrot -e 'mv $f ~/Pictures/screen'
+
+
+super + shift + s
+	scrot -s -e 'mv $f ~/Pictures/screen'
+
+super + c
+	xrandr --output HDMI-A-0 --mode 1920x1080
