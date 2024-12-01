@@ -14,20 +14,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-
-vim.opt.clipboard = 'unnamedplus'
-
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
-vim.opt.scrolloff = 15
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
-vim.cmd.colorscheme 'vim'
 
 require("lazy").setup({
   spec = {
