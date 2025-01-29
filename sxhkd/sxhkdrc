@@ -8,6 +8,7 @@ XF86AudioLowerVolume
 XF86AudioMute
 	volume volume_mute
 
+
 #Media
 XF86AudioPrev
 	playerctl previous
@@ -24,11 +25,16 @@ super + m
 
 #Misc
 super + s
-	scrot -e 'mv $f ~/Pictures/screen'
-
+	flameshot full --path ~/Pictures/screen
 
 super + shift + s
-	scrot -s -e 'mv $f ~/media/screen'
+	flameshot gui --path ~/Pictures/screen
 
 super + c
 	xrandr --output HDMI-A-0 --mode 1920x1080
+
+super + d
+    dmenu_run
+
+super + shift + d
+    i3-dmenu-desktop
