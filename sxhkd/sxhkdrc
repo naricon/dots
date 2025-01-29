@@ -11,13 +11,13 @@ XF86AudioMute
 
 #Media
 XF86AudioPrev
-	playerctl previous
+	playerctl -p 'kew, firefox' previous
 
 XF86AudioNext
-	playerctl next
+	playerctl -p 'kew, firefox' next
 
 XF86AudioPlay
-	playerctl -p kew play-pause
+	playerctl -p 'kew, firefox' play-pause
 
 super + m
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
