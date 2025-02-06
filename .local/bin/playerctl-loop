@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+playerctl -p kew metadata title >/dev/null && pkill -RTMIN+11 dwmblocks || break
+playerctl -p firefox metadata title > /dev/null >/dev/null && pkill -RTMIN+11 dwmblocks || break

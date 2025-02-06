@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# CPU temp, RAM usage; a notification for CPU usage & GPU temp. Change awk/sed statements as needed depending on your hardware.
+
+
+# Sensor info
+memuse=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("Ram:%2.2f/%2.2f\n", ( $3 / 1024), ($2 / 1024))}')
+gputemp=$(sensors | awk '/^edge/ {print "Gpu:" $2}')
+
+
+# Stats notification color
+#if [[ $cputemp -gt 75 ]]; then color="#bf616a"; elif [[ $cputemp -gt 65 ]]; then color="#ebcb8b"; else color="#a3be8c"; fi
+
+
+# Sending to bar
+echo $gputemp" :: "$memuse
+
+
+# Clicking on bar (requires statuscmd patch; https://dwm.suckless.org/patches/statuscmd/)
+#case $BLOCK_BUTTON in
+#  1) setsid -w -f "$TERMINAL" -e htop ;;
+#  3) notify-send -h string:bgcolor:$color "$cpuuse$gputemp" ;;
+#	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+#esac
