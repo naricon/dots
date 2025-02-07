@@ -1,0 +1,12 @@
+configuration {	 
+	display-window: "Window ";
+	display-drun: "Launch ";
+	display-run: "Run ";
+	modi: "drun,run";
+	location: 0;
+	font: "Terminus 12";
+	show-icons: true;
+	terminal: "st";
+}
+
+@theme "~/.config/rofi/themes/simple.rasi"

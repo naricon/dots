@@ -34,7 +34,4 @@ super + c
 	xrandr --output HDMI-A-0 --mode 1920x1080
 
 super + d
-    dmenu_run
-
-super + shift + d
-    rofi -show drun
+    rofi -show
