@@ -1,12 +1,12 @@
 #Volume
 XF86AudioRaiseVolume
-	volume volume_up
+	volume volume_up; pkill -RTMIN+10 dwmblocks
 
 XF86AudioLowerVolume
-	volume volume_down
+	volume volume_down; pkill -RTMIN+10 dwmblocks
 
 XF86AudioMute
-	volume volume_mute
+	volume volume_mute; pkill -RTMIN+10 dwmblocks
 
 
 #Media
