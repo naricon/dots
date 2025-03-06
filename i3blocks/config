@@ -1,11 +1,59 @@
-[temp]
-separator=false
-command=sensors | awk '/^edge/ {print $2}'
-interval=15
-color=#ff0000
+# Global properties
+separator=true
+separator_block_width=15
+
+[mediaplayer]
+command=mediaplayer
+instance=kew
+interval=5
+signal=11
+color=#2e5abf
+
+[bandwidth]
+command=status-bandwidth
+interval=5
+color=#FF0000
+#INTERFACE=eth0
+#INLABEL=IN 
+#OUTLABEL=OUT 
+#TREAT_UNKNOWN_AS_UP=0
+
+[cpu_usage]
+command=cpu_usage
+interval=10
+LABEL=CPU 
+#min_width=CPU: 100.00%
+T_WARN=50
+T_CRIT=80
+DECIMALS=2
+COLOR_NORMAL=#fa75ff
+COLOR_WARN=#f600ff
+COLOR_CRIT=#710075
+
+[gpu]
+command=status-sysstats
+interval=30
+color=#ffa340
+
+[memory]
+command=memory
+color=#00FF00
+interval=30
+
+[disk]
+command=disk
+DIR=/
+#ALERT_LOW=10
+interval=30
+color=#FFFF00
+
+[volume]
+command=status-volume
+interval=once
+signal=10
+color=#3d3dff
 
 [time]
-separator=false
-command=date '+%d %b (%a) %I:%M %p'
-interval=60
-color=#03fc0b
+command=date '+%Y-%m-%d %I:%M:%S'
+interval=1
+color=#00fff3
