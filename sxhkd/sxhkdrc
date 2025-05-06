@@ -25,10 +25,10 @@ super + m
 
 #Misc
 super + s
-	flameshot full --path ~/Media/screen
+	flameshot full --path ~/media/screen
 
 super + shift + s
-	flameshot gui --path ~/Media/screen
+	flameshot gui --path ~/media/screen
 
 super + c
 	xrandr --output HDMI-A-0 --mode 1920x1080

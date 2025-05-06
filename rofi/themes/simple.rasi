@@ -5,8 +5,8 @@
 
 *{
 	bg: #000000;
-	bg-alt: #999999;
-	fg: #999999;
+	bg-alt: #557c9b;
+	fg: #557c9b;
 	red: #fb4934;
 	green: #b8bb26;
 	yellow: #fabd2f;
@@ -14,7 +14,7 @@
 	purple: #d3869b;
 	teal: #8ec07c;
 	orange: #fe8019;
-	gray: #999999;
+	gray: #557c9b;
 	
 	background-color: @bg;	
 }

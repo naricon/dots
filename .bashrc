@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias extract='patool extract'
+alias t='tmux'
 alias kew='pkill -RTMIN+11 dwmblocks & kew all'
 alias nsxiv='nsxiv -a -t .'
 alias cal='cal -Y'
