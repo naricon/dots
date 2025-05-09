@@ -4,7 +4,7 @@ configuration {
 	display-run: "Run ";
 	modi: "drun,run";
 	location: 0;
-	font: "unifont 10";
+	font: "Ttyp0 15";
 	show-icons: true;
 	terminal: "st";
 }

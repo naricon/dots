@@ -16,4 +16,4 @@ vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 15
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'rose-pine-moon'
+vim.cmd.colorscheme 'kanagawa-dragon'

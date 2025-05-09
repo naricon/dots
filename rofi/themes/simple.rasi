@@ -5,16 +5,9 @@
 
 *{
 	bg: #000000;
-	bg-alt: #557c9b;
-	fg: #557c9b;
-	red: #fb4934;
-	green: #b8bb26;
-	yellow: #fabd2f;
-	blue: #83a598;
-	purple: #d3869b;
-	teal: #8ec07c;
-	orange: #fe8019;
-	gray: #557c9b;
+	bg-alt: #453c2e;
+	fg: #2e2b26;
+	gray: #2e2b26;
 	
 	background-color: @bg;	
 }
