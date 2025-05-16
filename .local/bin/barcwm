@@ -1,0 +1,5 @@
+#!/bin/sh
+while true; do
+    date '+%a, %B %d | %I:%M:%S %p'
+    sleep 1
+done

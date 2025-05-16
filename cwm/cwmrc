@@ -1,0 +1,73 @@
+# Colors & fonts
+borderwidth 0
+color menufg        "#000000"
+color menubg        "#ffffff"
+color font          "#000000"
+color selfont       "#ffffff"
+fontname            "Ttyp0:size=12"
+
+# Rules
+ignore bar
+autogroup 1 firefox
+autogroup 2 steam
+autogroup 3 vesktop
+moveamount 10
+gap 0 0 0 0
+snapdist 5
+sticky yes
+
+# Command
+command browser     firefox
+command terminal    st
+command social      vesktop
+command games       steam
+command music       audacious
+
+# Keybinds
+bind-key 4-Return   "st"
+bind-key 4S-r       restart
+bind-key 4S-q       quit
+bind-key 4-f        window-fullscreen
+bind-key 4S-f       window-maximize
+bind-key 4-q        window-close
+bind-key 4-x        window-hide
+bind-key 4M-minus   window-vtile
+bind-key 4M-equal   window-htile
+# menus
+bind-key 4-w        menu-window
+bind-key 4-space    menu-exec
+# move/resize
+bind-key 4-k        window-move-up
+bind-key 4-j        window-move-down
+bind-key 4-h        window-move-left
+bind-key 4-l        window-move-right
+bind-key 4S-k       window-move-up-big
+bind-key 4S-j       window-move-down-big
+bind-key 4S-h       window-move-left-big
+bind-key 4S-l       window-move-right-big
+bind-key 4M-k       window-resize-up
+bind-key 4M-j       window-resize-down
+bind-key 4M-h       window-resize-left
+bind-key 4M-l       window-resize-right
+bind-key 4MS-k      window-resize-up-big
+bind-key 4MS-j      window-resize-down-big
+bind-key 4MS-h      window-resize-left-big
+bind-key 4MS-l      window-resize-right-big
+#groups
+bind-key 4-1        group-only-1
+bind-key 4-2        group-only-2
+bind-key 4-3        group-only-3
+bind-key 4-4        group-only-4
+bind-key 4S-1       window-movetogroup-1
+bind-key 4S-2       window-movetogroup-2
+bind-key 4S-3       window-movetogroup-3
+bind-key 4S-4       window-movetogroup-4
+bind-key 4-period   group-cycle
+bind-key 4-comma    group-rcycle
+bind-key 4-Tab      window-cycle-ingroup
+bind-key 4S-Tab     window-rcycle-ingroup
+bind-key 4S-0       window-stick
+
+# Mouse Keybinds
+bind-mouse 4-1      window-move
+bind-mouse 4-3      window-resize
