@@ -7,8 +7,8 @@
 
 alias extract='patool extract'
 alias t='tmux'
-alias kew='pkill -RTMIN+11 dwmblocks & kew all'
-alias nsxiv='nsxiv -a -t .'
+alias ins='sudo make clean install'
+#alias kew='pkill -RTMIN+11 dwmblocks & kew all'
 alias cal='cal -Y'
 alias vim='nvim'
 alias ls='ls --color=auto'

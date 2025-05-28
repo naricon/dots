@@ -8,5 +8,5 @@ configuration {
 	show-icons: true;
 	terminal: "st";
 }
-
-@theme "~/.config/rofi/themes/simple.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+//@theme "~/.config/rofi/themes/simple.rasi"

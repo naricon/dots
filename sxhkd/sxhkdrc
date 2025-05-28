@@ -11,13 +11,13 @@ XF86AudioMute
 
 #Media
 XF86AudioPrev
-	playerctl -p 'kew, firefox' previous; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'kew, audacious, firefox' previous
 
 XF86AudioNext
-	playerctl -p 'kew, firefox' next; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'kew, audacious, firefox' next
 
 XF86AudioPlay
-	playerctl -p 'kew, firefox' play-pause; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'kew, audacious, firefox' play-pause
 
 super + m
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
@@ -25,13 +25,25 @@ super + m
 
 #Misc
 super + s
-	flameshot full --path ~/media/screen
+	screenshot_extra_features full
 
 super + shift + s
-	flameshot gui --path ~/media/screen
+	screenshot_extra_features
 
 super + c
 	xrandr --output HDMI-A-0 --mode 1920x1080
 
 super + d
     rofi -show
+
+super + bracketleft
+    calendar curr
+
+super + p
+    calendar prev
+
+super + bracketright
+    calendar next
+
+super + w
+    wallpapermenu
