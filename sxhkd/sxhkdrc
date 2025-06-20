@@ -11,13 +11,13 @@ XF86AudioMute
 
 #Media
 XF86AudioPrev
-	playerctl -p 'kew, audacious, firefox' previous
+	playerctl -p 'mpv, kew, audacious, firefox' previous; pkill -RTMIN+11 dwmblocks
 
 XF86AudioNext
-	playerctl -p 'kew, audacious, firefox' next
+	playerctl -p 'mpv, kew, audacious, firefox' next; pkill -RTMIN+11 dwmblocks
 
 XF86AudioPlay
-	playerctl -p 'kew, audacious, firefox' play-pause
+	playerctl -p 'mpv, kew, audacious, firefox' play-pause; pkill -RTMIN+11 dwmblocks
 
 super + m
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+show_dirs=false
+shuffle=false
+
+# Parse flags
+for (( i=0; i<${#1}; i++ )); do
+    case "${1:$i:1}" in
+        d) show_dirs=true ;;
+        s) shuffle=true ;;
+    esac
+done
+
+# Choose files or directories
+if $show_dirs; then
+    TARGETS=$(find ~/music/ -type d | fzf --multi --layout=reverse --height 99%)
+else
+    TARGETS=$(find ~/music/ | fzf --multi --layout=reverse --height 99%)
+fi
+
+# If nothing was selected, exit
+[ -z "$TARGETS" ] && exit
+
+# Build mpv command
+CMD=(mpv)
+$shuffle && CMD+=(--shuffle)
+
+# Read each selected line and add it to CMD array
+while IFS= read -r line; do
+    CMD+=("$line")
+done <<< "$TARGETS"
+
+# Run the command
+"${CMD[@]}"

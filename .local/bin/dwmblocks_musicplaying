@@ -2,7 +2,7 @@
 
 pidof -x playerctl-loop >/dev/null 2>&1 || playerctl-loop >/dev/null 2>&1 &
 
-player=kew
+player=mpv
 
 musicstatus=$(playerctl --player=$player status)
 

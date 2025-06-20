@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Usage: ./media_grep.sh "https://example.com"
+
+URL="$1"
+
+curl -s "$URL" | grep -Eo 'https?://[^"]+\.(jpg|jpeg|png|gif|webm|mp4|mp3)'
