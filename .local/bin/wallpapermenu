@@ -8,7 +8,7 @@ SCRIPT=refresh # script to run after wal for refreshing programs, etc.
 
 menu () {
 
-CHOICE=$(nsxiv -g 800x600+560+240 -otbr $FOLDER/*)
+CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -otbri)
 
 case $CHOICE in
 		*.*)
