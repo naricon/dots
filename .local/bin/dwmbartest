@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "hello world"
+click=$(echo "hello a")
+
+case $BLOCK_BUTTON in
+    1) echo $click
+        ;;
+esac

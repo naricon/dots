@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+GPU=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+
+CPU=$(sensors | awk '/Package id 0:/{print $4}' | sed 's/+//;s/\..*//')
+
+RAM=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%2.2f/%2.2f\n", ( $3 / 1024), ($2 / 1024))}')
+
+echo "GPU $GPU°C :: CPU $CPU°C :: RAM $RAM"
