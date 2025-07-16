@@ -8,19 +8,12 @@ SCRIPT=refresh # script to run after wal for refreshing programs, etc.
 
 menu () {
 
-CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -otbri)
+CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -aotbri)
 
-case $CHOICE in
-		*.*)
-            pkill gifw
-            wal -n -i "$CHOICE" -o $SCRIPT --cols16
+            wal -n -i "$CHOICE" --backend colorthief -o $SCRIPT --cols16
             
             sleep 0.5
 
-            if [[ "$CHOICE" == *.gif ]]; then
-                STYLE=$(echo -e "stretch\ncenter\ntile" | dmenu -c -l 3 -p "GIF Style:")
-                [[ -n "$STYLE" ]] && gifw "$CHOICE" "$STYLE" &
-            else
                 STYLE=$(echo -e "scaled\ncentered\ntiled\nzoomed\nzoomed fill" | dmenu -c -l 5 -p "Image Style:")
                 case "$STYLE" in
                     scaled) nitrogen --set-scaled "$CHOICE" ;;
@@ -30,10 +23,6 @@ case $CHOICE in
                     zoomed\ fill) nitrogen --set-zoom-fill "$CHOICE" ;;
                     *) nitrogen --set-auto "$CHOICE" ;;
                 esac
-            fi
-            ;;
-		*) exit 0 ;;
-esac
 }
 
 # If given arguments:
