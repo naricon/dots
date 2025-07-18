@@ -1,0 +1,19 @@
+#visualizer_type = "spectrum"
+visualizer_type = "ellipse"
+#visualizer_type = "wave_filled"
+#visualizer_type = "wave"
+
+visualizer_look = "░░"
+
+user_interface = alternative
+progressbar_look = "=*-"
+
+startup_slave_screen = "visualizer"
+
+playlist_editor_display_mode = "classic"
+search_engine_display_mode = "classic"
+browser_display_mode = "classic"
+playlist_display_mode = "classic"
+
+execute_on_song_change = "~/.config/ncmpcpp/notify"
+execute_on_player_state_change = "pkill -RTMIN+11 dwmblocks"
