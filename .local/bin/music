@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+status=$(playerctl -p mpd status)
+
+if [[ "$status" == "Stopped" ]]; then
+    exit 0
+fi
+
+case $BLOCK_BUTTON in
+  1) mpc prev;;
+  2) mpc toggle;;
+  3) mpc next;;
+#  4) mpc volume +5;;
+#  5) mpc volume -5;;
+esac
+
+song=$(mpc | head -n 1)
+volume=$(mpc status %volume% | sed "s/\ //")
+
+echo -e "$song :: $volume"

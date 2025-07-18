@@ -1,6 +1,6 @@
 #visualizer_type = "spectrum"
-visualizer_type = "ellipse"
-#visualizer_type = "wave_filled"
+#visualizer_type = "ellipse"
+visualizer_type = "wave_filled"
 #visualizer_type = "wave"
 
 visualizer_look = "░░"

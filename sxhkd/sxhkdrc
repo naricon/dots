@@ -23,19 +23,19 @@ super + m
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 super + shift + p
-    mpc prev
+    mpc prev; pkill -RTMIN+11 dwmblocks
 
 super + shift + bracketleft
-    mpc toggle
+    mpc toggle; pkill -RTMIN+11 dwmblocks
 
 super + shift + bracketright
-    mpc next
+    mpc next; pkill -RTMIN+11 dwmblocks
 
 super + shift + minus
-    mpc volume -5
+    mpc volume -5; pkill -RTMIN+11 dwmblocks
 
 super + shift + plus
-    mpc volume +5
+    mpc volume +5; pkill -RTMIN+11 dwmblocks
 
 #Reload SXHKD
 super + Escape
