@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-status=$(playerctl -p mpd status)
+if mpc status | grep -qw "\[playing\]"; then
+    status="Playing"
+    icon=""
+elif mpc status | grep -qw "\[paused\]"; then
+    status="Paused"
+    icon=""
+else
+    status="Stopped"
+fi
 
 if [[ "$status" == "Stopped" ]]; then
     exit 0

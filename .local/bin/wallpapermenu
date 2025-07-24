@@ -14,14 +14,14 @@ CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | n
             
             sleep 0.5
 
-                STYLE=$(echo -e "scaled\ncentered\ntiled\nzoomed\nzoomed fill" | dmenu -c -l 5 -p "Image Style:")
+                STYLE=$(echo -e "center\nfill\nmax\nscale\ntile" | dmenu -c -l 5 -p "Wallpaper style:")
                 case "$STYLE" in
-                    scaled) nitrogen --set-scaled "$CHOICE" ;;
-                    centered) nitrogen --set-centered "$CHOICE" ;;
-                    tiled) nitrogen --set-tiled "$CHOICE" ;;
-                    zoomed) nitrogen --set-zoom "$CHOICE" ;;
-                    zoomed\ fill) nitrogen --set-zoom-fill "$CHOICE" ;;
-                    *) nitrogen --set-auto "$CHOICE" ;;
+                    center) feh --bg-center "$CHOICE" ;;
+                    fill) feh --bg-fill "$CHOICE" ;;
+                    max) feh --bg-max "$CHOICE" ;;
+                    scale) feh --bg-scale "$CHOICE" ;;
+                    tile) feh --bg-tile "$CHOICE" ;;
+                    *) feh --set-auto "$CHOICE" ;;
                 esac
 }
 
