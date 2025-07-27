@@ -16,7 +16,7 @@ else
     NOTIFY_ID=0
 fi
 
-sleep 0.1
+#sleep 0.1
 notify-send -p -i "$ALBUM" --replace-id=$NOTIFY_ID "$ARTIST" "$TITLE" > "$NOTIFY_ID_FILE"
 
 pkill -RTMIN+11 dwmblocks

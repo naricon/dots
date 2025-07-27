@@ -37,6 +37,12 @@ super + shift + minus
 super + shift + plus
     mpc volume +5; pkill -RTMIN+11 dwmblocks
 
+super + a
+    change-song add
+
+super + shift + a
+    change-song change
+
 #Reload SXHKD
 super + Escape
     pkill -USR1 -x sxhkd

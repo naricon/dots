@@ -160,16 +160,16 @@
 def_key "k"
   scroll_up
 
-def_key "shift-k"
-  select_item
-  scroll_up
+#def_key "ctrl-k"
+#  select_item
+#  scroll_up
 
 def_key "j"
   scroll_down
 
-def_key "shift-j"
-  select_item
-  scroll_down
+#def_key "ctrl-j"
+#  select_item
+#  scroll_down
 #
 #def_key "["
 #  scroll_up_album
@@ -194,10 +194,10 @@ def_key "shift-j"
 #
 #def_key "end"
 #  move_end
-#
-#def_key "insert"
-#  select_item
-#
+
+def_key "m"
+  select_item
+
 #def_key "enter"
 #  enter_directory
 #
@@ -218,16 +218,16 @@ def_key "shift-j"
 #
 #def_key "space"
 #  toggle_visualization_type
-#
-#def_key "delete"
-#  delete_playlist_items
-#
-#def_key "delete"
-#  delete_browser_items
-#
-#def_key "delete"
-#  delete_stored_playlist
-#
+
+def_key "d"
+  delete_playlist_items
+
+def_key "d"
+  delete_browser_items
+
+def_key "d"
+  delete_stored_playlist
+
 def_key "l"
   next_column
 
@@ -452,10 +452,10 @@ def_key "h"
 #
 #def_key "v"
 #  reverse_selection
-#
-#def_key "V"
-#  remove_selection
-#
+
+def_key "M"
+  remove_selection
+
 #def_key "B"
 #  select_album
 #
@@ -473,19 +473,19 @@ def_key "h"
 #
 #def_key "C"
 #  crop_main_playlist
-#
-#def_key "m"
-#  move_sort_order_up
-#
-#def_key "m"
-#  move_selected_items_up
-#
-#def_key "n"
-#  move_sort_order_down
-#
-#def_key "n"
-#  move_selected_items_down
-#
+
+def_key "K"
+  move_sort_order_up
+
+def_key "K"
+  move_selected_items_up
+
+def_key "J"
+  move_sort_order_down
+
+def_key "J"
+  move_selected_items_down
+
 #def_key "M"
 #  move_selected_items_to
 #

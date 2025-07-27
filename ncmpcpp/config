@@ -8,12 +8,20 @@ visualizer_look = "░░"
 user_interface = alternative
 progressbar_look = "=*-"
 
-startup_slave_screen = "visualizer"
+space_add_mode = add_remove
+jump_to_now_playing_song_at_start = yes
 
-playlist_editor_display_mode = "classic"
-search_engine_display_mode = "classic"
-browser_display_mode = "classic"
-playlist_display_mode = "classic"
+startup_slave_screen = "visualizer"
+locked_screen_width_part = 45
+
+playlist_editor_display_mode = "columns"
+search_engine_display_mode = "columns"
+browser_display_mode = "columns"
+playlist_display_mode = "columns"
+
+browser_sort_mode = "mtime"
+
+song_columns_list_format = "(10)[cyan]{a} (40)[yellow]{t} (40)[yellow]{brE} (5)[yellow]{nrE} (5)[cyan]{lr}"
 
 execute_on_song_change = "~/.config/ncmpcpp/notify"
 execute_on_player_state_change = "pkill -RTMIN+11 dwmblocks"
