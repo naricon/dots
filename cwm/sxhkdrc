@@ -1,0 +1,24 @@
+#Volume
+XF86AudioRaiseVolume
+	volume volume_up
+
+XF86AudioLowerVolume
+	volume volume_down
+
+XF86AudioMute
+	volume volume_mute
+
+#Media
+XF86AudioPrev
+	playerctl -p 'mpv, kew, audacious, firefox' previous
+
+XF86AudioNext
+	playerctl -p 'mpv, kew, audacious, firefox' next
+
+XF86AudioPlay
+	playerctl -p 'mpv, kew, audacious, firefox' play-pause
+
+
+#Reload SXHKD
+super + Escape
+    pkill -USR1 -x sxhkd

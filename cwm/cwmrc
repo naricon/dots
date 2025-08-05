@@ -12,7 +12,7 @@ autogroup 1 firefox
 autogroup 2 steam
 autogroup 3 vesktop
 moveamount 10
-gap 0 0 0 0
+gap 0 17 0 0
 snapdist 5
 sticky yes
 
@@ -24,18 +24,36 @@ command games       steam
 command music       audacious
 
 # Keybinds
-bind-key 4-Return   "st"
-bind-key 4S-r       restart
-bind-key 4S-q       quit
-bind-key 4-f        window-fullscreen
-bind-key 4S-f       window-maximize
-bind-key 4-q        window-close
-bind-key 4-x        window-hide
-bind-key 4M-minus   window-vtile
-bind-key 4M-equal   window-htile
+unbind-key all
+bind-key 4-Return           "st"
+bind-key 4S-r               restart
+bind-key 4S-q               quit
+bind-key 4-f                window-maximize
+bind-key 4S-f               window-fullscreen
+bind-key 4-q                window-close
+bind-key 4-x                window-hide
+bind-key 4M-minus           window-vtile
+bind-key 4M-equal           window-htile
+bind-key 4-m                "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+bind-key 4S-p               "mpc prev"
+bind-key 4S-bracketleft     "mpc toggle"
+bind-key 4S-bracketright    "mpc next"
+bind-key 4S-minus           "mpc volume -5"
+bind-key 4S-plus            "mpc volume +5"
+bind-key 4-a                "change-song add"
+bind-key 4S-a               "change-song change"
+bind-key 4-b                "change-album"
+bind-key 4+s                "screenshot_extra_features full"
+bind-key 4S-s               "screenshot_extra_features"
+bind-key 4-c                "xrandr --output HDMI-A-0 --mode 1920x1080"
+bind-key 4-bracketleft      "calendar curr"
+bind-key 4-p                "calendar prev"
+bind-key 4-bracketright     "calendar next"
+bind-key 4-w                "wallpapermenu"
 # menus
-bind-key 4-w        menu-window
 bind-key 4-space    menu-exec
+bind-key 4S-x       menu-window-hidden
+bind-key 4-d        "rofi -show"
 # move/resize
 bind-key 4-k        window-move-up
 bind-key 4-j        window-move-down

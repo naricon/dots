@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+source ~/.cache/wal/colors.sh
+
+clock(){
+    time=$(date '+%a %d %B %Y %I:%M:%S %p')
+
+    printf "$time"
+}
+
+stats(){
+    gpu=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+    cpu=$(sensors | awk '/Package id 0:/{print $4}' | sed 's/+//;s/\..*//')
+    ram=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%2.2f/%2.2f\n", ( $3 / 1024), ($2 / 1024))}')
+
+    printf "cpu: $cpu gpu: $gpu ram: $ram"
+}
+while true; do
+    echo "%{c} $(clock) %{r} $(stats)%{B$color0} %{F$color13}"
+    sleep 1
+done
