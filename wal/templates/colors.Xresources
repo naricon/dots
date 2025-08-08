@@ -108,10 +108,10 @@ dwm.urgbordercolor:     {color1}
 dwm.urgfloatcolor:      {color13}
 
 dmenu.background:       {color0}
-dmenu.selbackground:    {color13}
+dmenu.selbackground:    {color9}
 dmenu.outbackground:    {color8}
  
-dmenu.foreground:       {color13}
+dmenu.foreground:       {color9}
 dmenu.selforeground:    {color0}
 dmenu.outforeground:    {color8}
  
@@ -123,3 +123,8 @@ Nsxiv.window.foreground:{color13}
 Nsxiv.bar.background:   {color13}
 Nsxiv.bar.foreground:   {color0}
 Nsxiv.bar.font:         Ttyp0
+
+twobwm.focus_color:     {color9}
+twobwm.unfocus_color:   {color8}
+twobwm.fixed_color:     {color9}
+twobwm.outer_border_color:{color0}
