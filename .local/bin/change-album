@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+album="$(mpc lsdirs | dmenu -i -c -l 10 -p "Select album:")" || exit 0
+
+mpc add "$album" && mpc play > /dev/null && notify-send "Added album to playlist"

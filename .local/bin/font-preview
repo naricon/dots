@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+font="$(fc-list | dmenu -i -c -l 50 -p "Select font to preview:" | sed 's/.*: //')"
+xfd -fa "$font"
