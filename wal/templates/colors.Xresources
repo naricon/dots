@@ -67,6 +67,8 @@ XClock*secondColor: rgba:{color15.xrgba}
 ! Set depth to make transparency work.
 URxvt*depth: 32
 
+Xcursor.theme:          "Hakurei Reimu"
+
 dwm.normfgcolor:        {color14}
 dwm.normbgcolor:        {color0}
 dwm.normbordercolor:    {color5}
@@ -116,6 +118,16 @@ dmenu.selforeground:    {color0}
 dmenu.outforeground:    {color8}
  
 dmenu.bordercolor:      {color14}
+
+XMenu.faceName:         Ttyp0
+XMenu.faceSize:         10
+XMenu.borderColor:      10
+XMenu.background:       {color0}
+XMenu.foreground:       {color14}
+XMenu.activeBackground: {color14}
+XMenu.activeForeground: {color0}
+XMenu.separatorColor:   {color14}
+XMenu.borderColor:      {color14}
 
 Nsxiv.window.background:{color0}
 Nsxiv.window.foreground:{color14}
