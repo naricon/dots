@@ -11,37 +11,40 @@ XF86AudioMute
 
 #Media
 XF86AudioPrev
-	playerctl -p 'mpv, kew, audacious, firefox' previous; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'mpv, kew, audacious, firefox' previous; 
 
 XF86AudioNext
-	playerctl -p 'mpv, kew, audacious, firefox' next; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'mpv, kew, audacious, firefox' next; 
 
 XF86AudioPlay
-	playerctl -p 'mpv, kew, audacious, firefox' play-pause; pkill -RTMIN+11 dwmblocks
+	playerctl -p 'mpv, kew, audacious, firefox' play-pause; 
 
 super + m
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 super + shift + p
-    mpc prev; pkill -RTMIN+11 dwmblocks
+    mpc prev; 
 
 super + shift + bracketleft
-    mpc toggle; pkill -RTMIN+11 dwmblocks
+    mpc toggle; 
 
 super + shift + bracketright
-    mpc next; pkill -RTMIN+11 dwmblocks
+    mpc next; 
 
 super + shift + minus
-    mpc volume -5; pkill -RTMIN+11 dwmblocks
+    mpc volume -5; 
 
 super + shift + plus
-    mpc volume +5; pkill -RTMIN+11 dwmblocks
+    mpc volume +5; 
 
 super + a
     change-song add
 
 super + shift + a
     change-song change
+
+super + b
+    change-album
 
 #Reload SXHKD
 super + Escape

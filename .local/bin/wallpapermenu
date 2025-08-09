@@ -8,9 +8,10 @@ SCRIPT=refresh # script to run after wal for refreshing programs, etc.
 
 menu () {
 
-CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -aotbri)
+#CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -aotbri)
+CHOICE=$(nsxiv $FOLDER -g 800x600+560+240 -aotbri)
 
-            wal -n -i "$CHOICE" --backend colorthief -o $SCRIPT --cols16
+            wal -n -i "$CHOICE" -o $SCRIPT --cols16
             
             sleep 0.5
 

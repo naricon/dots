@@ -67,33 +67,33 @@ XClock*secondColor: rgba:{color15.xrgba}
 ! Set depth to make transparency work.
 URxvt*depth: 32
 
-dwm.normfgcolor:        {color13}
+dwm.normfgcolor:        {color14}
 dwm.normbgcolor:        {color0}
 dwm.normbordercolor:    {color5}
 dwm.normfloatcolor:     {color5}
 
 dwm.selfgcolor:         {color7}
 dwm.selbgcolor:         {color2}
-dwm.selbordercolor:     {color13}
-dwm.selfloatcolor:      {color13}
+dwm.selbordercolor:     {color14}
+dwm.selfloatcolor:      {color14}
 
 dwm.titlenormfgcolor:   {color0}
 dwm.titlenormbgcolor:   {color0}
 dwm.titlenormbordercolor: {color8}
-dwm.titlenormfloatcolor:  {color13}
+dwm.titlenormfloatcolor:  {color14}
 
 dwm.titleselfgcolor:    {color0}
-dwm.titleselbgcolor:    {color13}
+dwm.titleselbgcolor:    {color14}
 dwm.titleselbordercolor: {color7}
 dwm.titleselfloatcolor:  {color0}
 
-dwm.tagsnormfgcolor:    {color13}
+dwm.tagsnormfgcolor:    {color14}
 dwm.tagsnormbgcolor:    {color0}
 dwm.tagsnormbordercolor:{color8}
-dwm.tagsnormfloatcolor: {color13}
+dwm.tagsnormfloatcolor: {color14}
 
 dwm.tagsselfgcolor:     {color0}
-dwm.tagsselbgcolor:     {color13}
+dwm.tagsselbgcolor:     {color14}
 dwm.tagsselbordercolor: {color7}
 dwm.tagsselfloatcolor:  {color2}
 
@@ -102,25 +102,25 @@ dwm.hidnormbgcolor:     {color5}
 dwm.hidselfgcolor:      {color0}
 dwm.hidselbgcolor:      {color0}
 
-dwm.urgfgcolor:         {color13}
+dwm.urgfgcolor:         {color14}
 dwm.urgbgcolor:         {color1}
 dwm.urgbordercolor:     {color1}
-dwm.urgfloatcolor:      {color13}
+dwm.urgfloatcolor:      {color14}
 
 dmenu.background:       {color0}
-dmenu.selbackground:    {color9}
+dmenu.selbackground:    {color14}
 dmenu.outbackground:    {color8}
  
-dmenu.foreground:       {color9}
+dmenu.foreground:       {color14}
 dmenu.selforeground:    {color0}
 dmenu.outforeground:    {color8}
  
-dmenu.bordercolor:      {color13}
+dmenu.bordercolor:      {color14}
 
 Nsxiv.window.background:{color0}
-Nsxiv.window.foreground:{color13}
+Nsxiv.window.foreground:{color14}
 
-Nsxiv.bar.background:   {color13}
+Nsxiv.bar.background:   {color14}
 Nsxiv.bar.foreground:   {color0}
 Nsxiv.bar.font:         Ttyp0
 

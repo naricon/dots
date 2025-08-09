@@ -30,7 +30,7 @@
     height = (0,300)
 
     # Position the notification in the top right corner
-    origin = top-left
+    origin = top-right
 
     # Offset from the origin
     offset = 20x20
@@ -100,7 +100,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
     frame_color = "{background}"
@@ -136,7 +136,7 @@
 
     ### Text ###
 
-    font = "Unifont 10"
+    font = "SymbolsNerdFont 10, Unifont 10, Ttyp0 10"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -334,18 +334,18 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "{background}"
-    foreground = "{color13}"
-    highlight = "{color13}"
-    frame_color = "{color13}"
+    foreground = "{color14}"
+    highlight = "{color14}"
+    frame_color = "{color14}"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "{background}"
-    foreground = "{color13}"
-    highlight = "{color13}"
-    frame_color = "{color13}"
+    foreground = "{color14}"
+    highlight = "{color14}"
+    frame_color = "{color14}"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
@@ -353,9 +353,9 @@
 
 [urgency_critical]
     background = "{background}"
-    foreground = "{color13}"
-    highlight = "{color13}"
-    frame_color = "{color13}"
+    foreground = "{color14}"
+    highlight = "{color14}"
+    frame_color = "{color14}"
     timeout = 20
     override_pause_level = 60
     # Icon for notifications with critical urgency, uncomment to enable
