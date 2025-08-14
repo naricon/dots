@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+file="$HOME/media/screen/$(date +%d%m%Y%H%M%S.png)"
+
+copy(){
+    xclip -selection clipboard -t image/png -i $file && notify-send -i $file "Screenshot" "$file copied to clipboard"
+}
+
+case $1 in
+    full) shotgun "$file" && copy ;;
+    sel) selection=$(slop -f "-i %i -g %g") && shotgun $selection "$file" && copy ;;
+esac

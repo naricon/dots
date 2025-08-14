@@ -1,38 +1,42 @@
 #!/usr/bin/env bash
 
-# slightly scuffed wallpaper picker menu for use with pywal - uses nsxiv if installed, otherwise uses dmenu
+notify(){
+    img=/tmp/palette.png
+    mapfile -t colors < ~/.cache/wal/colors
+    draw_cmds=()
+    for row in 0 1; do
+        for col in {0..7}; do
+            idx=$((row * 8 + col))
+            x1=$((col * 50))
+            y1=$((row * 50))
+            x2=$((x1 + 50))
+            y2=$((y1 + 50))
+            draw_cmds+=("-fill" "${colors[$idx]}" "-draw" "rectangle ${x1},${y1} ${x2},${y2}")
+        done
+    done
+    magick -size 400x100 xc:none "${draw_cmds[@]}" "$img"
 
-FOLDER=~/media/pape/ # wallpaper folder
-SCRIPT=refresh # script to run after wal for refreshing programs, etc.
-
-
-menu () {
-
-#CHOICE=$(find $FOLDER -type f -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2- | nsxiv -g 800x600+560+240 -aotbri)
-CHOICE=$(nsxiv $FOLDER -g 800x600+560+240 -aotbri)
-
-            wal -n -i "$CHOICE" -o $SCRIPT --cols16
-            
-            sleep 0.5
-
-                STYLE=$(echo -e "center\nfill\nmax\nscale\ntile" | dmenu -c -l 5 -p "Wallpaper style:")
-                case "$STYLE" in
-                    center) feh --bg-center "$CHOICE" ;;
-                    fill) feh --bg-fill "$CHOICE" ;;
-                    max) feh --bg-max "$CHOICE" ;;
-                    scale) feh --bg-scale "$CHOICE" ;;
-                    tile) feh --bg-tile "$CHOICE" ;;
-                    *) feh --set-auto "$CHOICE" ;;
-                esac
+    notify-send -i $img "Pywal" "changed colors"
 }
 
-# If given arguments:
-# First argument will be used by pywal as wallpaper/dir path
-# Second will be used as theme (use wal --theme to view built-in themes)
+folder=~/media/pape/
+script=refresh
 
-case "$#" in
-		0) menu ;;
-		1) wal -i "$1" -o $SCRIPT ;;
-		2) wal -i "$1" --theme $2 -o $SCRIPT ;;
-		*) exit 0 ;;
+wallpaper=$(nsxiv $folder -aotbrg 800x600+560+240)
+[ -z "$wallpaper" ] && exit 0
+backend=$(echo -e "wal\ncolorz\ncolorthief\nfast_colorthief\nmodern_colorthief\nhaishoku" | dmenu -c -l 6 -p "Select backend")
+[ -z "$backend" ] && exit 0
+style=$(echo -e "center\nfill\nmax\nscale\ntile" | dmenu -c -l 5 -p "Wallpaper style:")
+[ -z "$style" ] && exit 0
+
+wal -n -i "$wallpaper" --backend "$backend" -o $script --cols16
+sleep 0.5
+notify
+
+case "$style" in
+    center) feh --bg-center "$wallpaper" ;;
+    fill) feh --bg-fill "$wallpaper" ;;
+    max) feh --bg-max "$wallpaper" ;;
+    scale) feh --bg-scale "$wallpaper" ;;
+    tile) feh --bg-tile "$wallpaper" ;;
 esac

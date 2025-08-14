@@ -53,10 +53,10 @@ super + Escape
 
 #Misc
 super + s
-	screenshot_extra_features full
+	screenshot full
 
 super + shift + s
-	screenshot_extra_features
+	screenshot sel
 
 super + c
 	xrandr --output HDMI-A-0 --mode 1920x1080
