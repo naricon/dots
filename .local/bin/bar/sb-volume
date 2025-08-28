@@ -10,4 +10,4 @@ fi
 
 # Convert float to int
 vol=$(echo "$vol_info" | awk '{printf "%d", $2 * 100}')
-echo "${vol}%" | tr -cd '[:print:]\n'
+echo "volume ${vol}%" | tr -cd '[:print:]\n'

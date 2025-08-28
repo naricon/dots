@@ -138,3 +138,30 @@ twobwm.focus_color:     {color9}
 twobwm.unfocus_color:   {color8}
 twobwm.fixed_color:     {color9}
 twobwm.outer_border_color:{color0}
+
+dusk.norm.bg.color:     {color0}
+dusk.norm.fg.color:     {color14}
+dusk.norm.border.color: {color0}
+dusk.titlenorm.bg.color:{color6}
+dusk.titlenorm.fg.color:{color0}
+dusk.titlesel.bg.color: {color14}
+dusk.titlesel.fg.color: {color0}
+dusk.titlesel.border.color:{color14}
+dusk.titlenorm.border.color:{color6}
+dusk.wsnorm.bg.color:   {color0}
+dusk.wsnorm.fg.color:   {color14}
+dusk.wssel.bg.color:    {color14}
+dusk.wssel.fg.color:    {color0}
+dusk.wsvis.bg.color:    {color0}
+dusk.wsvis.fg.color:    {color14}
+dusk.wsocc.bg.color:    {color0}
+dusk.wsocc.fg.color:    {color14}
+dusk.marked.bg.color:   {color9}
+dusk.marked.border.color:{color9}
+dusk.marked.fg.color:   {color0}
+dusk.urg.bg.color:      {color9}
+dusk.urg.fg.color:      {color0}
+dusk.hidnorm.bg.color:  {color0}
+dusk.hidnorm.fg.color:  {color14}
+dusk.hidsel.bg.color:   {color14}
+dusk.hidsel.fg.color:   {color0}

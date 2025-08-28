@@ -8,15 +8,7 @@ ARTIST="$(mpc -f "%artist%" | head -n 1)"
 
 TITLE="$(mpc -f "%title%" | head -n 1)"
 
-NOTIFY_ID_FILE="/tmp/song_notify_id"
-
-if [ -f "$NOTIFY_ID_FILE" ]; then
-    NOTIFY_ID=$(cat "$NOTIFY_ID_FILE")
-else
-    NOTIFY_ID=0
-fi
-
 #sleep 0.1
-notify-send -p -i "$ALBUM" --replace-id=$NOTIFY_ID "$ARTIST" "$TITLE" > "$NOTIFY_ID_FILE"
+dunstify -r 999 -i "$ALBUM" "$ARTIST" "$TITLE"
 
-pkill -RTMIN+11 dwmblocks
+pkill -RTMIN+11 i3blocks

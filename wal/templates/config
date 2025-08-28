@@ -1,0 +1,24 @@
+separator=true
+separator_block_width=15
+
+[music]
+command=music
+interval=once
+signal=11
+color={color14}
+
+[stats]
+command=systemstats
+interval=30
+color={color13}
+
+[volume]
+command=sb-volume
+interval=once
+signal=10
+color={color9}
+
+[time]
+command=date '+%d %B, %A %I:%M:%S %P' | tr '[:upper:]' '[:lower:]'
+interval=1
+color={color10}

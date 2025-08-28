@@ -1,7 +1,7 @@
 #!/bin/bash
 ln -sf ~/.cache/wal/colors.Xresources ~/.Xresources
 ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+ln -sf ~/.cache/wal/config ~/.config/i3blocks/config
 pkill dunst; setsid -f dunst
 
-notify-send "Colors changed"
 xdotool key super+shift+F5

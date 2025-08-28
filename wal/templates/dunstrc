@@ -461,6 +461,9 @@
     appname = mpv
     history_ignore = yes
 
+[ncmpcpp]
+    appname = ncmpcpp
+    new_icon = "/tmp/cover.jpg"
 #[skip-display]
 #    # This notification will not be displayed, but will be included in the history
 #    summary = "foobar"

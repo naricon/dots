@@ -1,0 +1,14 @@
+#!/bin/sh
+
+xrdb -merge ~/.Xresources
+~/.fehbg
+xrandr --output HDMI-0 --gamma 1.3:1.3:1.3
+setxkbmap -layout "us,es" -option "grp:alt_shift_toggle"
+
+xclickroot xdg-xmenu -I &
+picom &
+lxpolkit &
+sxhkd &
+dunst &
+~/.local/bin/bar/status_updater.sh &
+exec dusk

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+song="$(mpc listall | dmenu -i -c -l 15 -g 2 -p "Select song:")" || exit 0
+
+case $1 in
+    add) mpc insert "$song" && notify-send "Added song to playlist";;
+    change) mpc insert "$song" && mpc next > /dev/null || mpc play > /dev/null;;
+esac

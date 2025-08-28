@@ -25,4 +25,4 @@ esac
 song=$(mpc | head -n 1)
 volume=$(mpc status %volume% | sed "s/\ //")
 
-echo -e "$song :: $volume"
+echo -e "$song $volume"
