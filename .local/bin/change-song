@@ -6,8 +6,8 @@ pos="$(mpc playlist | grep -n -F "$current" | cut -d: -f1)"
 
 playlist="$(mpc playlist | nl -w1 -s' ' | sed "${pos}s/^/▶ /")"
 
-choice="$(printf "%s\n" "$playlist" | dmenu -i -c -l 20)" || exit 0
+choice="$(printf "%s\n" "$playlist" | dmenu -i -c -l 40)" || exit 0
 
 index="$(echo "$choice" | sed 's/^▶ //;s/^[[:space:]]*//;s/ .*//')"
 
-[ -n "$index" ] && mpc play "$index" > /dev/null
+[ -n "$index" ] && mpc play "$index" > /dev/null && pkill -RTMIN+11 i3blocks
