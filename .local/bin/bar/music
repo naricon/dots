@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if ! pgrep -f "$HOME/.local/bin/bar/mpd-up" > /dev/null; then
+    nohup "$HOME/.local/bin/bar/mpd-up" >/dev/null 2>&1 &
+fi
+
 if mpc status | grep -qw "\[playing\]"; then
     status="Playing"
     icon=""
@@ -14,12 +18,12 @@ if [[ "$status" == "Stopped" ]]; then
     exit 0
 fi
 
-case $BLOCK_BUTTON in
+case $button in
   1) mpc prev;;
   2) mpc toggle;;
   3) mpc next;;
-#  4) mpc volume +5;;
-#  5) mpc volume -5;;
+  4) mpc volume +5;;
+  5) mpc volume -5;;
 esac
 
 song=$(mpc | head -n 1)

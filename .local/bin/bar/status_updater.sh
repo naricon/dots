@@ -18,7 +18,7 @@ while true; do
     $SETSTATUS 0 "$(date '+%d %B, %A %I:%M:%S %P' | tr '[:upper:]' '[:lower:]')" &
 
     if [ $((secs % 30)) = 0 ]; then
-        $SETSTATUS 1 "$(dwmblocks_systemstats)" &
+        $SETSTATUS 1 "$(systemstats)" &
     fi
 
     ((secs+=1))

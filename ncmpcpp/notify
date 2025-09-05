@@ -11,4 +11,4 @@ TITLE="$(mpc -f "%title%" | head -n 1)"
 #sleep 0.1
 dunstify -r 999 -i "$ALBUM" "$ARTIST" "$TITLE"
 
-pkill -RTMIN+11 i3blocks
+#pkill -RTMIN+11 i3blocks

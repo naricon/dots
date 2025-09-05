@@ -24,4 +24,4 @@ browser_sort_mode = "mtime"
 song_columns_list_format = "(10)[cyan]{a} (40)[yellow]{t} (40)[yellow]{brE} (5)[yellow]{nrE} (5)[cyan]{lr}"
 
 execute_on_song_change = "~/.config/ncmpcpp/notify"
-execute_on_player_state_change = "pkill -RTMIN+11 i3blocks"
+#execute_on_player_state_change = "pkill -RTMIN+11 i3blocks"
