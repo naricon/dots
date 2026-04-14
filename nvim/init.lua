@@ -13,8 +13,8 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
---vim.keymap.set('n', '<C-h>', '<C-w>h')
---vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 --vim.keymap.set('n', '<C-j>', '<C-w>j')
 --vim.keymap.set('n', '<C-k>', '<C-w>k')
 
@@ -22,7 +22,7 @@ vim.pack.add({
     'https://github.com/norcalli/nvim-colorizer.lua',
     'https://github.com/uZer/pywal16.nvim',
     'https://github.com/vague-theme/vague.nvim',
---    'https://github.com/nvim-tree/nvim-tree.lua',
+    'https://github.com/nvim-tree/nvim-tree.lua',
     'https://github.com/nvim-telescope/telescope.nvim',
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/nvim-tree/nvim-web-devicons',
@@ -48,18 +48,18 @@ require('colorizer').setup({ "*" },{
 })
 
 -- Nvim tree config
---require('nvim-tree').setup()
---vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
+require('nvim-tree').setup()
+vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
 
 --Telescope config
 require('telescope')
-vim.keymap.set('n', '<leader>o', function() require('telescope.builtin').find_files() end)
+vim.keymap.set('n', '<leader>i', function() require('telescope.builtin').find_files() end)
 
 -- Tabs config
 require('barbar').setup()
 vim.keymap.set('n', '<leader>x', '<Cmd>BufferClose<CR>')
-vim.keymap.set('n', '<C-h>', '<Cmd>BufferPrevious<CR>')
-vim.keymap.set('n', '<C-l>', '<Cmd>BufferNext<CR>')
+vim.keymap.set('n', '<C-j>', '<Cmd>BufferPrevious<CR>')
+vim.keymap.set('n', '<C-k>', '<Cmd>BufferNext<CR>')
 
 vim.cmd.colorscheme 'vague'
 
