@@ -28,10 +28,26 @@ vim.pack.add({
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/romgrk/barbar.nvim',
     'https://github.com/folke/flash.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/nvim-mini/mini.completion',
+})
+
+require('mini.completion').setup()
+
+-- LSP config
+vim.lsp.config('pyright',{})
+vim.lsp.config('lua_ls',{})
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pyright')
+
+vim.diagnostic.config({
+    virual_text = true,
+    signs = false
 })
 
 -- Flash config
-require('flash').setup() 
+require('flash').setup()
 vim.keymap.set({'n','x','o'}, '<leader>f', function() require('flash').jump() end)
 
 -- Color highlight config
@@ -52,7 +68,6 @@ require('nvim-tree').setup()
 vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
 
 --Telescope config
-require('telescope')
 vim.keymap.set('n', '<leader>i', function() require('telescope.builtin').find_files() end)
 
 -- Tabs config
