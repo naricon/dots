@@ -29,22 +29,82 @@ vim.pack.add({
     'https://github.com/romgrk/barbar.nvim',
     'https://github.com/folke/flash.nvim',
     'https://github.com/neovim/nvim-lspconfig',
-    'https://github.com/nvim-mini/mini.completion',
+    'https://github.com/hrsh7th/nvim-cmp',
+    'https://github.com/hrsh7th/cmp-nvim-lsp',
+    'https://github.com/hrsh7th/cmp-buffer',
+    'https://github.com/hrsh7th/cmp-path',
 })
 
-require('mini.completion').setup()
+-- LSP
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+vim.lsp.config('lua_ls', {
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {'vim'}
+            }
+        }
+    }
+})
 
--- LSP config
-vim.lsp.config('pyright',{})
-vim.lsp.config('lua_ls',{})
+vim.lsp.config('pyright', {
+    capabilities = capabilities
+})
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('pyright')
-
+vim.lsp.enable({'pyright','lua_ls'})
 vim.diagnostic.config({
-    virual_text = true,
-    signs = false
+    -- Set to false if hover
+    virtual_text = true
 })
+
+-- Hover diagnostic
+--vim.o.updatetime = 250
+--vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+--CMP
+local cmp = require('cmp')
+
+cmp.setup({
+    completion = {
+        autocomplete = { cmp.TriggerEvent.TextChanged },
+    },
+
+    mapping = cmp.mapping.preset.insert({
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { 'i' }),
+
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end, { 'i' }),
+    }),
+
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
+    },
+
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+})
+
 
 -- Flash config
 require('flash').setup()
@@ -68,6 +128,7 @@ require('nvim-tree').setup()
 vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
 
 --Telescope config
+require('telescope')
 vim.keymap.set('n', '<leader>i', function() require('telescope.builtin').find_files() end)
 
 -- Tabs config
@@ -76,5 +137,9 @@ vim.keymap.set('n', '<leader>x', '<Cmd>BufferClose<CR>')
 vim.keymap.set('n', '<C-j>', '<Cmd>BufferPrevious<CR>')
 vim.keymap.set('n', '<C-k>', '<Cmd>BufferNext<CR>')
 
+-- Colorscheme config
+require('vague').setup({
+    italic = false
+})
 vim.cmd.colorscheme 'vague'
 
