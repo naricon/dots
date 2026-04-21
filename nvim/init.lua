@@ -19,9 +19,10 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 --vim.keymap.set('n', '<C-k>', '<C-w>k')
 
 vim.pack.add({
-    'https://github.com/norcalli/nvim-colorizer.lua',
+    'https://github.com/catgoose/nvim-colorizer.lua',
     'https://github.com/uZer/pywal16.nvim',
     'https://github.com/vague-theme/vague.nvim',
+    'https://github.com/bluz71/vim-moonfly-colors',
     'https://github.com/nvim-tree/nvim-tree.lua',
     'https://github.com/nvim-telescope/telescope.nvim',
     'https://github.com/nvim-lua/plenary.nvim',
@@ -141,5 +142,5 @@ vim.keymap.set('n', '<C-k>', '<Cmd>BufferNext<CR>')
 require('vague').setup({
     italic = false
 })
-vim.cmd.colorscheme 'vague'
+vim.cmd.colorscheme 'moonfly'
 
