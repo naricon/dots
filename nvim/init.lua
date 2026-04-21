@@ -125,7 +125,24 @@ require('colorizer').setup({ "*" },{
 })
 
 -- Nvim tree config
-require('nvim-tree').setup()
+require('nvim-tree').setup({
+    view = {
+        width = 30,
+        side = 'right',
+    },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+        icons = {
+            show = {
+                git = true,
+                folder = false,
+                folder_arrow = false
+            },
+        },
+    },
+})
 vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
 
 --Telescope config
