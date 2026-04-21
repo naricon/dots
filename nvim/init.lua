@@ -126,6 +126,12 @@ require('colorizer').setup({ "*" },{
 
 -- Nvim tree config
 require('nvim-tree').setup({
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {
+        enable = true,
+        update_root = true,
+    },
     view = {
         width = 30,
         side = 'right',
@@ -156,8 +162,6 @@ vim.keymap.set('n', '<C-j>', '<Cmd>BufferPrevious<CR>')
 vim.keymap.set('n', '<C-k>', '<Cmd>BufferNext<CR>')
 
 -- Colorscheme config
-require('vague').setup({
-    italic = false
-})
+vim.g.moonflyItalics = false
 vim.cmd.colorscheme 'moonfly'
 
