@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+VOLUME=$(mpc status "%volume%")
+
+ALBUM="/tmp/cover.jpg"
+
+ARTIST="$(mpc -f "%artist%" | head -n 1)"
+
+TITLE="$(mpc -f "%title%" | head -n 1)"
+
+dunstify -h int:value:"`mpc status '%volume%'`" -r 999 -i "$ALBUM" "$ARTIST" "$TITLE" 

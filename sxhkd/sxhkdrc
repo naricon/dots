@@ -32,22 +32,22 @@ super + shift + bracketright
     mpc next; 
 
 super + shift + minus
-    mpc volume -5; 
+    mpc volume -5; mpd-volume
 
 super + shift + plus
-    mpc volume +5; 
+    mpc volume +5; mpd-volume
 
-super + a
-    add-song add
-
-super + shift + a
-    add-song change
-
-super + b
-    add-album
-
-super + c
-    change-song
+#super + a
+#    add-song add
+#
+#super + shift + a
+#    add-song change
+#
+#super + b
+#    add-album
+#
+#super + c
+#    change-song
 
 #Reload SXHKD
 super + Escape
@@ -61,8 +61,8 @@ super + s
 super + shift + s
 	screenshot sel
 
-super + c
-	xrandr --output HDMI-A-0 --mode 1920x1080
+#super + c
+#	xrandr --output HDMI-A-0 --mode 1920x1080
 
 super + d
     rofi -show
