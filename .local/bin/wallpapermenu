@@ -22,7 +22,15 @@ notify(){
 folder=~/media/pape/
 script=refresh
 
-wallpaper=$(nsxiv $folder -aotbrg 800x600+560+240)
+#recursive sort
+#wallpaper=$(nsxiv $folder -aotbrg 800x600+560+240)
+
+#last modified sort
+wallpaper=$(find "$folder" -type f -printf '%T@ %p\n' |
+    sort -rn -k1,1 |
+    cut -d' ' -f2- |
+    nsxiv -aotbg 800x600+560+240 -i)
+
 [ -z "$wallpaper" ] && exit 0
 backend=$(echo -e "wal\ncolorz\ncolorthief\nfast_colorthief\nmodern_colorthief\nhaishoku" | dmenu -c -l 6 -p "Select backend")
 [ -z "$backend" ] && exit 0
